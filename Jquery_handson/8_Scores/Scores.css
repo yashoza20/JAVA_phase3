@@ -1,0 +1,17 @@
+table{
+    background-color: #E8DCFF;
+    border: 2px solid gray;
+}
+td{
+    border: 2px solid gray;
+    padding: 0;
+}
+body{
+    font-family: sans-serif;
+}
+.inp{
+    background-color: #FEFFB0;
+}
+.res{
+    color: #174C68;
+}
