@@ -1,0 +1,27 @@
+.reg_form{
+    width:30%;
+    margin:100px auto;
+    border-radius:10px;
+    box-shadow:0 0 10px black;
+    font-size:18px;
+    padding:10px;
+}
+tr{
+    height:45px;
+}
+.error{
+    font-size:14px;
+    color:red;
+}
+h4{
+    text-align:center;
+}
+input{
+    font-size:18px;
+}
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+}
+input.ng-valid.ng-touched{
+    border: 2px solid green;
+}

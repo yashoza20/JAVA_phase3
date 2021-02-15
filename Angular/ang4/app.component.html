@@ -1,0 +1,126 @@
+<div class="reg_form">
+  <h4>Registration Form</h4>
+  <form [formGroup]="myForm">
+    <table>
+      <tr>
+        <td>First Name</td>
+        <td>
+          <input type="text" formControlName="firstname">
+          <span class="error" *ngIf="myForm.controls.firstname.touched && 
+                     myForm.controls.firstname.invalid && 
+                     myForm.controls.firstname.errors.required">
+            * Can't be Blank
+          </span>
+          <span class="error" *ngIf="myForm.controls.firstname.touched && 
+                     myForm.controls.firstname.invalid && 
+                     myForm.controls.firstname.errors.minlength">
+            * Min 3 Chars
+          </span>
+          <span class="error" *ngIf="myForm.controls.firstname.touched && 
+                     myForm.controls.firstname.invalid && 
+                     myForm.controls.firstname.errors.pattern">
+            * Only Alphabets
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Last Name</td>
+        <td>
+          <input type="text" formControlName="lastname">
+          <span class="error" *ngIf="myForm.controls.lastname.touched && 
+                 myForm.controls.lastname.invalid && 
+                 myForm.controls.lastname.errors.required">
+            * Can't Be Blank
+          </span>
+          <span class="error" *ngIf="myForm.controls.lastname.touched && 
+                 myForm.controls.lastname.invalid && 
+                 myForm.controls.lastname.errors.minlength">
+            * Min 3 Chars
+          </span>
+          <span class="error" *ngIf="myForm.controls.lastname.touched && 
+                 myForm.controls.lastname.invalid && 
+                 myForm.controls.lastname.errors.pattern">
+            * Only Alphabets
+          </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Email</td>
+        <td>
+          <input type="text" formControlName="email">
+        <span class="error"
+              *ngIf="myForm.controls.email.touched && 
+                     myForm.controls.email.invalid && 
+                     myForm.controls.email.errors.required">
+            * Can't Be Blank            
+        </span>
+       
+        <span class="error"
+              *ngIf="myForm.controls.email.touched && 
+                     myForm.controls.email.invalid && 
+                     myForm.controls.email.errors.pattern">
+            * Not valid 
+        </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Amount</td>
+        <td>
+          <input type="text" formControlName="amount">
+        <span class="error"
+              *ngIf="myForm.controls.amount.touched && 
+                     myForm.controls.amount.invalid && 
+                     myForm.controls.amount.errors.required">
+                     * Can't Be Blank            
+        </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Gender</td>
+        <td>
+          <input type="radio" formControlName="gender" value="Male">Male
+        <input type="radio" formControlName="gender" value="Female">Female
+        <span class="error"
+              *ngIf="myForm.controls.gender.touched && 
+                     myForm.controls.gender.invalid && 
+                     myForm.controls.gender.errors.required">
+            * Select Gender          
+        </span>
+        </td>
+      </tr>
+
+      <tr>
+        <td>Country</td>
+        <td>
+          <select formControlName="country">
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+            <option>Japan</option>
+        </select>
+        <span class="error"
+              *ngIf="myForm.controls.country.touched && 
+                     myForm.controls.country.invalid && 
+                     myForm.controls.country.errors.required">
+            * Select Country          
+        </span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan=2 style="text-align:center">
+          <input type="submit" value="Register" (click)="onRegisterClick()">
+        </td>
+      </tr>
+
+      <tr>
+        <td colspan=2 style="text-align:center">
+          <div [innerHTML]="msg"></div>
+        </td>
+      </tr>
+    </table>
+  </form>
+</div>
